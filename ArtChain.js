@@ -98,6 +98,7 @@ const prospectPlanet = async (id, callback) => {
         setFoundries(foundriesList);
         setPlanetsList(foundriesList);
     }
+    if (planet.transactions.transactions.length > 0) {return null;}
     if (!planet.hasTriedFindingArtifact && planet.prospectedBlockNumber === undefined) {
         return await ui.prospectPlanet(planet.locationId);
     }
